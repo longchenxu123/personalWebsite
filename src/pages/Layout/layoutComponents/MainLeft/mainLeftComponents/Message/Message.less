@@ -1,0 +1,186 @@
+.message {
+  transform-style: preserve-3d;
+  @media (max-width: 767px) {
+    // 小于 等于 767 认定是 手机
+    height: calc(100% - 20%);
+  }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: fade 0.5s;
+    max-width: 460px;
+    position: relative;
+    // border: 2px solid red;
+    .logo-img {
+      border-radius: 50%;
+      width: 120px;
+      position: absolute;
+      top: -55%;
+      left: 52.4%;
+      transform: translateZ(-800px);
+      perspective: 800px;
+    }
+    .logo-img1 {
+      border-radius: 5px;
+      width: 120px;
+      filter: blur(10px);
+      // position: absolute;
+      // top: -80%;
+      // left: 18%
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    .name {
+      width: 100%;
+      padding-left: 22px;
+      transform: translateY(-8px);
+      // position: relative;
+      // border: 2px solid blue;
+      ul {
+        // border: 2px solid pink;
+        margin-top: 0.5rem;
+        li {
+          display: flex;
+          // align-items: center;
+          // font-size: 1.6rem;
+          margin-bottom: 0.8rem;
+          font-family: "hanyiganlan";
+          line-height: 1.1rem;
+          label {
+            width: 60px;
+            font-weight: bold;
+            text-align: right;
+          }
+          span {
+            flex: 1;
+            text-align: left;
+            margin-left: 1.9rem;
+          }
+          a {
+            font-family: "Pacifico-Regular";
+          }
+        }
+      }
+      .bg {
+        font-size: 5rem;
+        text-align: left;
+        font-weight: 700;
+        --color1: #000;
+        --color2: rgb(151, 109, 93);
+        text-shadow: 1px 0px var(--color1), 1px 2px var(--color1),
+          3px 1px var(--color2), 2px 3px var(--color1), 4px 2px var(--color2),
+          4px 4px var(--color1), 5px 3px var(--color2), 5px 5px var(--color1),
+          7px 4px var(--color2), 6px 6px var(--color1), 8px 5px var(--color2),
+          7px 7px var(--color1);
+        p {
+          display: flex;
+          align-items: baseline;
+          white-space: nowrap;
+        }
+      }
+
+      .sm {
+        margin-left: 6px;
+        font-size: 2rem;
+        --color1: #000;
+        --color2: rgb(143, 64, 36);
+        color: #f4f4f4;
+        text-shadow: 2px 2px 0 #0f3340, 4px 4px 0 #1c5980, 6px 6px 0 #0f3340;
+        @media (min-width: 721px) and (max-width: 789px) {
+          display: none;
+        }
+      }
+
+      @keyframes rabbit {
+        0% {
+          background-position: 0px -0%;
+        }
+        100% {
+          background-position: 0px -400%;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      .logo-img {
+        width: 100px;
+      }
+      .name {
+        padding-left: 0px;
+        // height: 128px;
+        .bg {
+          font-size: 4.5rem;
+          margin-bottom: 1rem;
+        }
+        ul {
+          margin-top: 1rem;
+          li {
+            label {
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 720px) {
+      max-width: 100%;
+    }
+  }
+
+  .bottomText {
+    margin-top: 1rem;
+  }
+  .description {
+    padding: 1rem;
+    // margin-top: 3.5rem;
+    max-width: 666px;
+    animation: fade 0.5s;
+
+    .content {
+      display: flex;
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      .topSymbol {
+        font-size: 35px;
+      }
+      .bottomSymbol {
+        font-size: 35px;
+      }
+      .text {
+        margin: 0.75rem 1rem;
+        line-height: 2rem;
+        margin-right: auto;
+        transition: opacity 0.2s;
+        font-size: 1.3rem;
+        letter-spacing: 5px;
+        letter-spacing: 0.075ch;
+        text-align: center;
+        font-family: "hanyiganlan";
+        text-shadow: -1px -1px 0 #000000, /* 左上角的阴影 */ 1px -1px 0 #000000,
+          /* 右上角的阴影 */ -1px 1px 0 #000000,
+          /* 左下角的阴影 */ 1px 1px 0 #000000,
+          /* 右下角的阴影 */ 0 -2px 5px rgba(0, 0, 0, 0.5),
+          /* 向下的主阴影，增加模糊程度 */ 0 2px 5px rgba(0, 0, 0, 0.5); /* 向上的主阴影，增加模糊程度 */
+        p {
+          &:nth-of-type(1) {
+            font-family: "mofa";
+          }
+        }
+        @media (max-width: 767px) {
+          font-size: 1.39rem;
+        }
+      }
+
+      .xicon:nth-of-type(2) {
+        align-self: flex-end;
+      }
+    }
+    @media (max-width: 720px) {
+      max-width: 100%;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,254 @@
+// @keyframes rabbit {
+//     0% {
+//         background-position: 0px -0%;
+//     }
+//     100% {
+//         background-position: 0px -400%;
+//     }
+// }
+
+
+
+// keyframes 动画
+@keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+@keyframes fade-blur-main-in {
+    from {
+      transform: scale(1.2);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+.layoutName {
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background: none;
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 80%;
+  left: calc(50% - 28px);
+  width: 56px;
+  height: 34px;
+  background: rgb(0 0 0 / 20%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  border-radius: 6px;
+  transition: transform 0.3s;
+  animation: fade 0.5s;
+  &:active {
+    transform: scale(0.95);
+  }
+  .i-icon {
+    transform: translateY(2px);
+  }
+  @media (min-width: 721px) {
+    display: none;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+#main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+    transition: transform 0.3s;
+    animation: fade-blur-main-in 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 0.5s;
+    .container {
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 0 0.5vw;
+      display: flex;
+      flex-direction: column;
+      .tabsUserItem {
+        height: 6rem;
+        margin: 1rem 0;
+        ul {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          justify-content: space-between;
+          li {
+            // margin: 10px 10px 10px 0;
+            flex: 1;
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            transition: 1s;
+            transform: rotate3d(0, 1, 0, 0deg);
+            font-family: 'hanyiganlan';
+            // text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+            img {
+              width: 2.6rem;
+              margin-bottom: 0.5rem;
+            }
+            text-shadow:
+                -1px -1px 0 #000000,  /* 左上角的阴影 */
+                1px -1px 0 #000000,   /* 右上角的阴影 */
+                -1px 1px 0 #000000,   /* 左下角的阴影 */
+                1px 1px 0 #000000,    /* 右下角的阴影 */
+                0 -2px 5px rgba(0, 0, 0, 0.5), /* 向下的主阴影，增加模糊程度 */
+                0 2px 5px rgba(0, 0, 0, 0.5);  /* 向上的主阴影，增加模糊程度 */
+
+            @media (max-width: 767px) { // 小于 等于 767 认定是 手机
+              font-size: 1.6rem;
+            }
+          }
+
+          li:nth-child(2) {
+            margin: 0 1rem;
+            @media (min-width: 1200px) { 
+              margin: 0 15rem;
+            }
+          }
+        }
+      }
+      .all {
+        width: 100%;
+        // height: 100%;
+        flex: 1;
+        min-height: 0;
+        padding: 3rem 0 0.75rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        // align-items: center;
+        // border: 2px solid red;
+        box-sizing: border-box;
+        @media (max-width: 767px) { // 小于 等于 767 认定是 手机
+          padding: 1em 0 0.75rem 0;
+        }
+      }
+      .more {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000080;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px); /* Safari */
+        z-index: 2;
+        animation: fade 0.5s;
+      }
+      @media (max-width: 1200px) {
+        padding: 0 2vw;
+      }
+
+     
+    }
+    .menu {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 80%;
+      left: calc(50% - 28px);
+      width: 56px;
+      height: 34px;
+      background: rgb(0 0 0 / 20%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* Safari */
+      border-radius: 6px;
+      transition: transform 0.3s;
+      animation: fade 0.5s;
+      &:active {
+        transform: scale(0.95);
+      }
+      .i-icon {
+        transform: translateY(2px);
+      }
+      @media (min-width: 721px) {
+        display: none;
+      }
+    }
+    @media (max-height: 720px) {
+      overflow-y: auto;
+      overflow-x: hidden;
+      .container {
+        height: 721px;
+        .more {
+          height: 721px;
+          width: calc(100% + 6px);
+        }
+        @media (min-width: 391px) {
+          // w 1201px ~ max
+          padding-left: 0.7vw;
+          padding-right: 0.25vw;
+          @media (max-width: 1200px) { // w 1101px ~ 1280px
+            padding-left: 2.3vw;
+            padding-right: 1.75vw;
+          }
+          @media (max-width: 1100px) { // w 993px ~ 1100px
+            padding-left: 2vw;
+            padding-right: calc(2vw - 6px);
+          }
+          @media (max-width: 992px) { // w 901px ~ 992px
+            padding-left: 2.3vw;
+            padding-right: 1.7vw;
+          }
+          @media (max-width: 900px) { // w 391px ~ 900px
+            padding-left: 2vw;
+            padding-right: calc(2vw - 6px);
+          }
+        }
+      }
+      .menu {
+        top: 605.64px; // 721px * 0.84
+        left: 170.5px; // 391 * 0.5 - 25px
+        @media (min-width: 391px) {
+          left: calc(50% - 25px);
+        }
+      }
+      .f-ter {
+        top: 675px; // 721px - 46px
+        @media (min-width: 391px) {
+          padding-left: 6px;
+        }
+      }
+    }
+    @media (max-width: 390px) {
+      overflow-x: auto;
+      .container {
+        width: 391px;
+      }
+      .menu {
+        left: 167.5px; // 391px * 0.5 - 28px
+      }
+      .f-ter {
+        width: 391px;
+      }
+      @media (min-height: 721px) {
+        overflow-y: hidden;
+      }
+    }
+  }
+

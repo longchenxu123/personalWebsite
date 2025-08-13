@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Github",
+    "icon": "/images/icon/github.png",
+    "tip": "去 Github 看看",
+    "url": "https://github.com/longchenxu123?tab=repositories"
+  },
+  {
+    "name": "npm",
+    "icon": "/images/icon/npm.png",
+    "tip": "npm了解一下",
+    "url": "https://www.npmjs.com/package/lcx_encryption?activeTab=readme"
+  },
+  {
+    "name": "Email",
+    "icon": "/images/icon/email.png",
+    "tip": "来封 Email ~",
+    "url": "https://workspace.google.com/intl/zh-CN/gmail/"
+  },
+  {
+    "name": "CSDN",
+    "icon": "/images/icon/csdn.png",
+    "tip": "csdn看一下",
+    "url": "https://blog.csdn.net/L1515115/article/details/141644103"
+  }
+]

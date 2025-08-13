@@ -1,0 +1,190 @@
+:root {
+  --n: 5;
+}
+
+.knowMoreAboutClass {
+  // height: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Raleway", "Arial", sans-serif;
+  font-size: 13px;
+  background: url(/public/images/icon/bg001.jpg);
+  // background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ddd;
+  box-sizing: border-box;
+  .goback {
+    position: fixed;
+    left: 5%;
+    top: 5%;
+    // width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  main {
+    background: transparent linear-gradient(currentColor, currentColor) 50%/2px
+      repeat-y;
+  }
+
+  #btn--yp {
+    box-sizing: content-box;
+    position: fixed;
+    z-index: 9;
+    bottom: 1em;
+    right: 1em;
+    border: solid 1em transparent;
+    width: 4.625em;
+    height: 3.25em;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/icon-yp.svg)
+      50% / cover content-box;
+    font: 16px/ 1.25 trebuchet ms, sans-serif;
+    // text-indent: 200vw;
+    text-shadow: none;
+    filter: grayscale(1) drop-shadow(0 0 1px #e8e0e0);
+    transition: 0.5s;
+    white-space: nowrap;
+  }
+  #btn--yp:before {
+    box-sizing: inherit;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    margin: 1em -0.5em;
+    padding: 0.5em;
+    width: 100%;
+    border-radius: 5px;
+    background: #e8e0e0;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    text-indent: 0vw;
+    white-space: normal;
+    animation: float 1s ease-in-out infinite alternate;
+    content: attr(data-txt);
+  }
+  #btn--yp:hover,
+  #btn--yp:focus {
+    outline: none;
+    filter: grayscale(0) drop-shadow(0 0 1px crimson);
+  }
+
+  @keyframes float {
+    to {
+      transform: translateY(0.75em);
+    }
+  }
+  article {
+    --s: -1;
+    display: flex;
+    align-items: center;
+    height: calc(100vh / var(--n));
+    transform: translate(calc(var(--s) * 50%));
+    position: relative;
+  }
+  article:nth-child(odd) {
+    justify-content: end;
+    h3 {
+      @media (max-width: 767px) {
+        position: absolute;
+        top: 50%;
+        z-index: 111;
+        right: -100%;
+        white-space: nowrap;
+        transform: translate(-60%, -50%);
+      }
+    }
+  }
+  article:nth-child(even) {
+    h3{
+      @media (max-width: 767px) {
+        position: absolute;
+        top: 50%;
+        z-index: 111;
+        // border: 2px solid blue;
+        left: -50%;
+        white-space: nowrap;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  article:nth-child(2n) {
+    justify-content: start;
+    --s: 1;
+  }
+  article:nth-child(2n) img {
+    --cpval: polygon(
+      90.45085% 79.38926%,
+      34.54915% 97.55283%,
+      0% 50%,
+      34.54915% 2.44717%,
+      90.45085% 20.61074%
+    );
+    -webkit-clip-path: var(--cpval);
+    clip-path: var(--cpval);
+  }
+  article:nth-child(2n) img:hover {
+    --cpval: polygon(
+      90.45085% 20.61074%,
+      90.45085% 79.38926%,
+      34.54915% 97.55283%,
+      0% 50%,
+      34.54915% 2.44717%
+    );
+    -webkit-clip-path: var(--cpval);
+    clip-path: var(--cpval);
+  }
+
+  h3 {
+    order: var(--s);
+    font: 700 2em segoe script, cursive;
+    text-transform: capitalize;
+    font-family: 'hanyiganlan';
+  }
+
+  figure,
+  img {
+    height: 100%;
+  }
+
+  figure {
+    background: linear-gradient(currentColor, currentColor)
+      calc((1 - var(--s)) * 50%) 50%/50% 2px no-repeat;
+    filter: drop-shadow(2px 2px 3px currentcolor);
+  }
+
+  img {
+    display: block;
+    margin: 0 1em;
+    --cpval: polygon(
+      100% 50%,
+      65.45085% 97.55283%,
+      9.54915% 79.38926%,
+      9.54915% 20.61074%,
+      65.45085% 2.44717%
+    );
+    -webkit-clip-path: var(--cpval);
+    clip-path: var(--cpval);
+    transition: 0.7s;
+  }
+  img:hover {
+    --cpval: polygon(
+      65.45085% 97.55283%,
+      9.54915% 79.38926%,
+      9.54915% 20.61074%,
+      65.45085% 2.44717%,
+      100% 50%
+    );
+    -webkit-clip-path: var(--cpval);
+    clip-path: var(--cpval);
+  }
+}
