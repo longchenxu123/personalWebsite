@@ -2,6 +2,7 @@
   "name": "lipsdemo",
   "version": "0.1.0",
   "pri1vate": true,
+  "homepage": "https://jackson.github.io/personalWebsite",
   "dependencies": {
     "@reduxjs/toolkit": "^2.4.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -31,7 +32,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "rules": {
@@ -55,6 +58,7 @@
   "devDependencies": {
     "babel-plugin-import": "^1.13.8",
     "customize-cra": "^1.0.0",
+    "gh-pages": "^6.3.0",
     "less": "^4.2.1",
     "less-loader": "^12.2.0",
     "react-app-rewired": "^2.2.1"
